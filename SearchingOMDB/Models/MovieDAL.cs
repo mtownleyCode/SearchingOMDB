@@ -5,7 +5,7 @@ namespace SearchingOMDB.Models
 {
     public static class MovieDAL
     {
-        public static string myKey = "4138b92c40msh040bf536271f01dp1c4ec1jsned777caa2841";
+        public static string myKey = "";
 
         public static string baseURL = @"https://moviesdatabase.p.rapidapi.com/titles/";
 
