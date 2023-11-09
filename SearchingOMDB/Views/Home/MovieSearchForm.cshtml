@@ -1,0 +1,46 @@
+﻿<form method="post" asp-controller="Home" asp-action="MovieSearchResults">
+    <p>Movie Title:</p>
+    <input type="text" name="titleToSearch" />
+
+    <p style="margin-top: 20px"><input type="submit" value="Search" /></p>
+</form>
+
+@model Rootobject
+
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .column {
+        float: left;
+        width: 170px;
+        padding: 5px;
+    }
+
+    .row::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+</style>
+
+@if (Model != null)
+{
+    for (int i = 0; i < Model.results.Length; i++)
+    {
+        <div class="row" style="margin-bottom:25px">
+            <div class="column" style="float:left">
+                <img src=@Model.results[i].primaryImage.url style="width:125px; height: auto" />
+            </div>
+            <div class="column">
+                <p>Title: @Model.results[i].titleText.text</p>
+                <p>Release Year: @Model.results[i].releaseYear.year</p>
+            </div>
+        </div>
+ 
+    }
+
+}
+
